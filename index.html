@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>19 de Febrero 2026</title>
+<title>19 de Febrero 2026 💜</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -11,37 +11,51 @@
 body{
     margin:0;
     padding:0;
-    background: radial-gradient(circle at top, #190024, #0a0014 75%);
     font-family:'Poppins', sans-serif;
-    color:#f5e6ff;
+    color:#f8eaff;
+    background: linear-gradient(-45deg,#12001f,#1b0033,#0d0018,#1a0030);
+    background-size:400% 400%;
+    animation: fondo 15s ease infinite;
+}
+
+@keyframes fondo{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 .container{
     max-width:900px;
-    margin:30px auto;
-    padding:20px;
+    margin:40px auto;
+    padding:25px;
 }
 
-.video{
+.boton-musica{
+    display:block;
     width:100%;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 0 30px rgba(200,0,255,0.25);
-    margin-bottom:40px;
+    text-align:center;
+    padding:15px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:600;
+    margin-bottom:35px;
+    background:linear-gradient(45deg,#ff00cc,#9900ff);
+    color:white;
+    box-shadow:0 0 20px rgba(255,0,200,0.5);
+    transition:0.3s ease;
 }
 
-iframe{
-    width:100%;
-    height:220px;
-    border:none;
+.boton-musica:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 30px rgba(255,0,255,0.8);
 }
 
 .carta{
-    background:rgba(25,0,40,0.88);
-    padding:40px 30px;
+    background:rgba(20,0,35,0.88);
+    padding:45px 30px;
     border-radius:25px;
-    box-shadow:0 0 40px rgba(150,0,255,0.15);
-    backdrop-filter: blur(6px);
+    box-shadow:0 0 50px rgba(180,0,255,0.25);
+    backdrop-filter:blur(8px);
 }
 
 .fecha{
@@ -49,15 +63,15 @@ iframe{
     font-size:14px;
     letter-spacing:2px;
     opacity:0.8;
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .titulo{
     font-family:'Great Vibes', cursive;
-    font-size:55px;
+    font-size:58px;
     text-align:center;
     margin-bottom:35px;
-    color:#f3d1ff;
+    color:#ffd6ff;
 }
 
 .carta p{
@@ -67,36 +81,42 @@ iframe{
 }
 
 .promesa{
-    margin-top:40px;
+    margin-top:45px;
     padding:25px;
-    border-radius:18px;
-    background:rgba(120,0,180,0.15);
-    border-left:4px solid #c084ff;
+    border-radius:20px;
+    background:linear-gradient(135deg,rgba(140,0,255,0.2),rgba(255,0,200,0.15));
+    border:1px solid rgba(255,0,255,0.3);
     font-style:italic;
 }
 
 .neon-rosado{
     margin-top:60px;
     text-align:center;
-    font-size:20px;
+    font-size:21px;
     font-weight:600;
     color:#ffb3f5;
     text-shadow:
-        0 0 5px #ff4df3,
-        0 0 10px #ff4df3,
-        0 0 18px #ff00e6;
+        0 0 6px #ff4df3,
+        0 0 12px #ff00e6,
+        0 0 22px #ff00e6;
+    animation: brillo 2s infinite alternate;
 }
 
 .neon-morado{
-    margin-top:30px;
+    margin-top:35px;
     text-align:center;
-    font-size:20px;
+    font-size:21px;
     font-weight:600;
     color:#c084ff;
     text-shadow:
-        0 0 5px #a020f0,
-        0 0 10px #8a2be2,
-        0 0 18px #6a0dad;
+        0 0 6px #a020f0,
+        0 0 12px #8a2be2,
+        0 0 22px #6a0dad;
+}
+
+@keyframes brillo{
+    from{opacity:0.8;}
+    to{opacity:1;}
 }
 
 .firma{
@@ -107,9 +127,8 @@ iframe{
 }
 
 @media(max-width:600px){
-    .titulo{font-size:42px;}
+    .titulo{font-size:45px;}
     .carta p{font-size:15px;}
-    iframe{height:200px;}
 }
 </style>
 </head>
@@ -118,12 +137,9 @@ iframe{
 
 <div class="container">
 
-<div class="video">
-<iframe src="https://www.youtube.com/embed/RHolsCq2Z6M?autoplay=1&loop=1&playlist=RHolsCq2Z6M"
-allow="autoplay; encrypted-media"
-allowfullscreen>
-</iframe>
-</div>
+<a class="boton-musica" href="https://youtu.be/RHolsCq2Z6M?si=WgnmUz08OI9D-A6C" target="_blank">
+💜 Presiona aquí y deja que nuestra canción acompañe esta carta 💜
+</a>
 
 <div class="carta">
 
@@ -199,7 +215,7 @@ Te amo con una pasión que no se apaga cuando se apagan las luces.</p>
 <p>Y si esta noche el cielo pudiera escucharme… sabría que mi deseo más grande no es una estrella. Eres tú.</p>
 
 <div class="promesa">
-Hoy no te prometo palabras bonitas que el viento pueda llevarse. Te prometo elegirte incluso cuando el orgullo quiera hablar primero. Te prometo escucharte antes de juzgar, abrazarte antes de discutir y quedarme incluso cuando el camino se vuelva difícil. Prometo construir contigo un amor que no dependa de momentos perfectos, sino de decisiones firmes. Prometo ser tu apoyo silencioso cuando estés cansada, tu impulso cuando dudes y tu compañero leal en cada etapa de nuestra historia, sin rendirme cuando amar requiera paciencia, madurez y valentía.
+Te prometo algo más grande que palabras bonitas: prometo crecer contigo, aprender a amarte mejor cada día, elegir el diálogo antes que el silencio, la comprensión antes que el orgullo y la lealtad incluso cuando el mundo intente distraernos. Prometo construir un amor que evolucione con el tiempo, que no se rinda en las tormentas y que encuentre siempre la forma de volver a abrazarse con más fuerza.
 </div>
 
 <div class="firma">
@@ -208,11 +224,11 @@ Juan Kaleth Mendoza Primera 💜
 </div>
 
 <div class="neon-rosado">
-Eres la coincidencia más extraordinaria que la vida escribió en mi destino, el milagro cotidiano que transforma mis días comunes en eternidades llenas de sentido, y el único lugar donde mi corazón descansa sin miedo mientras late completamente enamorado de ti.
+Eres el destino que no sabía que estaba esperando, la casualidad más perfecta que transformó mi historia y la única persona capaz de hacer que mi corazón encuentre eternidad incluso en un solo instante a tu lado.
 </div>
 
 <div class="neon-morado">
-No solo te amo… te amo con la certeza de quien encontró su hogar en unos brazos, con la pasión de quien arde sin consumirse y con la decisión firme de seguir pronunciando tu nombre como la verdad más hermosa que habita en mi vida.
+No solo te amo… te amo con la decisión firme de elegirte en cada etapa de la vida, con la pasión de quien arde sin miedo y con la certeza absoluta de que mi lugar favorito en el universo siempre será contigo.
 </div>
 
 </div>
