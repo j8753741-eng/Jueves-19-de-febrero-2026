@@ -11,28 +11,46 @@
 body{
     margin:0;
     padding:0;
+    overflow-x:hidden;
     font-family:'Poppins', sans-serif;
+    background: radial-gradient(circle at top,#140021,#0a0014 70%);
     color:#f8eaff;
-    background: linear-gradient(-45deg,#12001f,#1b0033,#0d0018,#1a0030);
-    background-size:400% 400%;
-    animation: fondo 15s ease infinite;
 }
 
-@keyframes fondo{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
+/* ESTRELLAS */
+.stars{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    z-index:-1;
+    background:transparent;
+}
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:0.6;
+    animation: twinkle 4s infinite alternate;
+}
+@keyframes twinkle{
+    from{opacity:0.2;}
+    to{opacity:1;}
 }
 
+/* CONTENEDOR */
 .container{
     max-width:900px;
     margin:40px auto;
-    padding:25px;
+    padding:20px;
 }
 
+/* BOTON MUSICA */
 .boton-musica{
     display:block;
-    width:100%;
     text-align:center;
     padding:15px;
     border-radius:30px;
@@ -41,37 +59,43 @@ body{
     margin-bottom:35px;
     background:linear-gradient(45deg,#ff00cc,#9900ff);
     color:white;
-    box-shadow:0 0 20px rgba(255,0,200,0.5);
-    transition:0.3s ease;
+    animation: latido 1.8s infinite;
+    box-shadow:0 0 25px rgba(255,0,200,0.6);
+}
+@keyframes latido{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
 }
 
-.boton-musica:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 30px rgba(255,0,255,0.8);
-}
-
+/* CARTA */
 .carta{
-    background:rgba(20,0,35,0.88);
+    opacity:0;
+    transform:translateY(30px);
+    animation: aparecer 3s forwards;
+    animation-delay:1s;
+    background:rgba(20,0,35,0.9);
     padding:45px 30px;
     border-radius:25px;
     box-shadow:0 0 50px rgba(180,0,255,0.25);
-    backdrop-filter:blur(8px);
+    backdrop-filter:blur(6px);
+}
+@keyframes aparecer{
+    to{opacity:1; transform:translateY(0);}
 }
 
 .fecha{
     text-align:center;
     font-size:14px;
     letter-spacing:2px;
-    opacity:0.8;
     margin-bottom:25px;
 }
 
 .titulo{
     font-family:'Great Vibes', cursive;
-    font-size:58px;
+    font-size:55px;
     text-align:center;
-    margin-bottom:35px;
-    color:#ffd6ff;
+    margin-bottom:30px;
 }
 
 .carta p{
@@ -80,8 +104,9 @@ body{
     margin-bottom:20px;
 }
 
+/* PROMESA */
 .promesa{
-    margin-top:45px;
+    margin-top:40px;
     padding:25px;
     border-radius:20px;
     background:linear-gradient(135deg,rgba(140,0,255,0.2),rgba(255,0,200,0.15));
@@ -89,51 +114,62 @@ body{
     font-style:italic;
 }
 
-.neon-rosado{
-    margin-top:60px;
+/* BOTON FINAL */
+.boton-final{
+    margin-top:50px;
+    display:block;
     text-align:center;
-    font-size:21px;
+    padding:14px;
+    border-radius:25px;
+    background:#2a003d;
+    border:1px solid #c084ff;
+    color:#fff;
+    cursor:pointer;
+    transition:0.3s;
+}
+.boton-final:hover{
+    background:#3d005c;
+}
+
+/* FRASES NEON OCULTAS */
+.neon-container{
+    display:none;
+    margin-top:50px;
+}
+
+.neon-rosado{
+    text-align:center;
+    font-size:20px;
     font-weight:600;
     color:#ffb3f5;
-    text-shadow:
-        0 0 6px #ff4df3,
-        0 0 12px #ff00e6,
-        0 0 22px #ff00e6;
-    animation: brillo 2s infinite alternate;
+    text-shadow:0 0 8px #ff4df3,0 0 18px #ff00e6;
+    margin-bottom:30px;
 }
 
 .neon-morado{
-    margin-top:35px;
     text-align:center;
-    font-size:21px;
+    font-size:20px;
     font-weight:600;
     color:#c084ff;
-    text-shadow:
-        0 0 6px #a020f0,
-        0 0 12px #8a2be2,
-        0 0 22px #6a0dad;
-}
-
-@keyframes brillo{
-    from{opacity:0.8;}
-    to{opacity:1;}
+    text-shadow:0 0 8px #a020f0,0 0 18px #6a0dad;
 }
 
 .firma{
     margin-top:50px;
     text-align:right;
     font-weight:600;
-    font-size:18px;
 }
 
 @media(max-width:600px){
-    .titulo{font-size:45px;}
+    .titulo{font-size:42px;}
     .carta p{font-size:15px;}
 }
 </style>
 </head>
 
 <body>
+
+<div class="stars"></div>
 
 <div class="container">
 
@@ -143,10 +179,7 @@ body{
 
 <div class="carta">
 
-<div class="fecha">
-Jueves 19 de febrero de 2026, por la noche.
-</div>
-
+<div class="fecha">Jueves 19 de febrero de 2026, por la noche.</div>
 <div class="titulo">Mi amor</div>
 
 <p>La luna está en silencio, como si supiera que lo que voy a escribir no necesita testigos, solo verdad.</p>
@@ -215,24 +248,47 @@ Te amo con una pasión que no se apaga cuando se apagan las luces.</p>
 <p>Y si esta noche el cielo pudiera escucharme… sabría que mi deseo más grande no es una estrella. Eres tú.</p>
 
 <div class="promesa">
-Te prometo algo más grande que palabras bonitas: prometo crecer contigo, aprender a amarte mejor cada día, elegir el diálogo antes que el silencio, la comprensión antes que el orgullo y la lealtad incluso cuando el mundo intente distraernos. Prometo construir un amor que evolucione con el tiempo, que no se rinda en las tormentas y que encuentre siempre la forma de volver a abrazarse con más fuerza.
+Te prometo construir contigo un amor que evolucione, que aprenda de cada etapa, que no se rinda cuando el orgullo intente hablar primero. Prometo elegirte en la calma y en el caos, abrazarte cuando dudes y caminar contigo incluso cuando el camino no sea sencillo. Prometo que lo nuestro no será costumbre, será decisión diaria.
 </div>
 
 <div class="firma">
-Siempre tuyo,<br>
+Siempre tuyo preciosa,<br>
 Juan Kaleth Mendoza Primera 💜
 </div>
 
+<button class="boton-final" onclick="mostrarNeon()">
+💜 Ábreme hasta el final 💜
+</button>
+
+<div class="neon-container" id="neon">
 <div class="neon-rosado">
-Eres el destino que no sabía que estaba esperando, la casualidad más perfecta que transformó mi historia y la única persona capaz de hacer que mi corazón encuentre eternidad incluso en un solo instante a tu lado.
+Eres la coincidencia más perfecta que convirtió mi historia en destino, el suspiro que transformó mi vida en eternidad y el único lugar donde mi alma descansa sin miedo.
 </div>
 
 <div class="neon-morado">
-No solo te amo… te amo con la decisión firme de elegirte en cada etapa de la vida, con la pasión de quien arde sin miedo y con la certeza absoluta de que mi lugar favorito en el universo siempre será contigo.
+No solo te amo… te amo con la certeza de quien encontró su hogar, con la pasión de quien arde sin apagarse y con la decisión eterna de elegirte cada día de mi vida.
+</div>
 </div>
 
 </div>
 </div>
+
+<script>
+/* GENERAR ESTRELLAS */
+const starsContainer = document.querySelector('.stars');
+for(let i=0;i<60;i++){
+    let star=document.createElement('div');
+    star.classList.add('star');
+    star.style.top=Math.random()*100+'%';
+    star.style.left=Math.random()*100+'%';
+    star.style.animationDuration=(2+Math.random()*3)+'s';
+    starsContainer.appendChild(star);
+}
+
+function mostrarNeon(){
+    document.getElementById("neon").style.display="block";
+}
+</script>
 
 </body>
 </html>
